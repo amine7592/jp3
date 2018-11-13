@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JP3HelloWorld</string>
+    <string name="hello">Ciao</string>
+    <string name="click_me">Clicca qui</string>
+    <string name="register">Resgitrati</string>
+    <string name="login">Login</string>
+    <string name="insert_email">inserisci email</string>
+    <string name="insert_password">inserisci password</string>
+    <string name="error_email">email non valida</string>
+    <string name="error_password">la password deve avere una lunghezza minima di 8 caratteri</string>
+
+
+</resources>

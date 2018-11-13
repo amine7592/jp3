@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">JP3HelloWorld</string>
+    <string name="hello">Salut</string>
+    <string name="click_me">Click ici</string>
+    <string name="register">Enregistrer</string>
+    <string name="login">Login</string>
+    <string name="insert_email">met ton email</string>
+    <string name="insert_password">met ton mot de passe</string>
+
+</resources>

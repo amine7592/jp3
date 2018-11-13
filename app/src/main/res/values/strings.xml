@@ -1,10 +1,12 @@
 <resources>
     <string name="app_name">JP3HelloWorld</string>
-    <string name="hello">Ciao</string>
-    <string name="click_me">Clicca qui</string>
-    <string name="register">Resgitrati</string>
+    <string name="hello">Hello</string>
+    <string name="click_me">Click me</string>
+    <string name="register">Register</string>
     <string name="login">Login</string>
-    <string name="insert_email">inserisci email</string>
-    <string name="insert_password">inserisci password</string>
+    <string name="insert_email">Insert your email</string>
+    <string name="insert_password">Insert your password</string>
+    <string name="error_email">invalid email</string>
+    <string name="error_password">password length must be at least 6 chars</string>
 
 </resources>
