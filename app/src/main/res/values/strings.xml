@@ -9,4 +9,5 @@
     <string name="error_email">invalid email</string>
     <string name="error_password">password length must be at least 6 chars</string>
     <string name="success_login">Login success</string>
+    <string name="button_clicked">Button clicked</string>
 </resources>

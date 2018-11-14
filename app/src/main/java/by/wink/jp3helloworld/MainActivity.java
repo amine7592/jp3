@@ -1,6 +1,5 @@
 package by.wink.jp3helloworld;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +21,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button loginBtn;
     Button registerBtn;
 
+    View.OnClickListener registerBtnCL = new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            //TODO do something
+            showMessage(getString(R.string.button_clicked));
+
+        }
+    };
+
+
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,6 +47,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         registerBtn = findViewById(R.id.register_btn);
 
         loginBtn.setOnClickListener(this);
+        registerBtn.setOnClickListener(registerBtnCL);
+
+        /*
+        registerBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // TODO do something
+                showMessage(getString(R.string.button_clicked));
+            }
+        });*/
+
 
     }
 
@@ -73,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("Login","success");
     }
 
-
+    //region LifeCycle
     @Override
     protected void onStart() {
         super.onStart();
@@ -114,6 +136,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.d("Lifecycle", "onDestroy");
 
     }
+
+
+    //endregion
+
+
 
     @Override
     public void onClick(View view) {
