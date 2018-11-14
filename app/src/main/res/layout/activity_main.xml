@@ -12,6 +12,9 @@
         android:hint="@string/insert_email"
         android:inputType="textEmailAddress"
         android:id="@+id/username_et"
+        android:drawablePadding="5dp"
+        android:drawableLeft="@drawable/baseline_account_circle_black_18"
+
         android:layout_height="wrap_content" />
 
     <EditText
@@ -20,6 +23,8 @@
         android:inputType="textPassword"
         android:id="@+id/password_et"
         android:layout_marginTop="16dp"
+        android:drawableLeft="@drawable/ic_key_black"
+        android:drawablePadding="5dp"
         android:layout_height="wrap_content" />
 
 
