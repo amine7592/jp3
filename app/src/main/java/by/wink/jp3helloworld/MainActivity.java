@@ -1,12 +1,16 @@
 package by.wink.jp3helloworld;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -17,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     Button loginBtn;
     Button registerBtn;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -36,8 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private boolean isValidEmail(String email) {
-        //TODO check how to check if a mail is valid
-        return false;
+        return (!TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches());
+
     }
 
     private boolean isValidPwd(String password) {
@@ -48,16 +53,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
+    private void showMessage(String message){
+
+        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+        Log.d("Login",message);
+    }
+
+
     private void showErrorMessage(String error) {
-        //TODO how to show an Error message
+        showMessage(error);
+
         Log.e("Login",error);
 
     }
 
 
     private void showSuccessMessage() {
-        //TODO how to show a success Message
-
+        showMessage(getString(R.string.success_login));
         Log.d("Login","success");
     }
 
@@ -111,6 +123,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             if (!isValidEmail(email)) {
                 showErrorMessage(getString(R.string.error_email));
+
                 return;
             }
 
