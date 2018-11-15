@@ -1,5 +1,6 @@
 package by.wink.jp3helloworld;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private static final int PASSWORD_MIN_LENGTH = 6;
+    public static final String EMAIL_KEY = "email";
 
     EditText usernameEt;
     EditText passwordEt;
@@ -21,11 +23,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button loginBtn;
     Button registerBtn;
 
+
+    //Antoher way to define clickListener
+
     View.OnClickListener registerBtnCL = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             //TODO do something
-            showMessage(getString(R.string.button_clicked));
+            Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+            startActivity(intent);
+           // showMessage(getString(R.string.button_clicked));
 
         }
     };
@@ -48,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         loginBtn.setOnClickListener(this);
         registerBtn.setOnClickListener(registerBtnCL);
+
+
 
         /*
         registerBtn.setOnClickListener(new View.OnClickListener() {
@@ -77,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private void showMessage(String message){
 
-        Toast.makeText(getApplicationContext(),message,Toast.LENGTH_LONG).show();
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
         Log.d("Login",message);
     }
 
@@ -160,6 +169,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
 
             showSuccessMessage();
+            Intent intent = new Intent(this,WelcomeActivity.class);
+
+            /* Another way to set Extras data
+
+            Bundle extras = new Bundle();
+            extras.putString(EMAIL_KEY,email);
+            intent.putExtras(extras);
+
+            */
+
+
+            intent.putExtra(EMAIL_KEY,email);
+            startActivity(intent);
 
         }
     }

@@ -11,4 +11,5 @@
     <string name="success_login">Login success</string>
     <string name="button_clicked">Button clicked</string>
     <string name="insert_phone">Insert your phone number</string>
+    <string name="welcome">Welcome</string>
 </resources>
